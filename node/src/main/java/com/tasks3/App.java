@@ -1,6 +1,5 @@
-package test;
+package com.tasks3;
 
-import com.tasks3.carddeck.Card;
 import com.tasks3.carddeck.Deck;
 import com.tasks3.linkedlist.LinkedList;
 
@@ -23,22 +22,12 @@ public final class App {
 
     private void task_3_2(){
         Deck deck = new Deck();
-        Deck originalDeck = deck;
-        Card card;
 
         System.out.println("shuffle:");
         deck.shuffle();
-        while(originalDeck.hasNext()){
-            card = originalDeck.drawOne();
-            System.out.println(card.getSuit().getName() + " " + card.getRank().getName());
-        }
-
+        
         System.out.println("order:");
         deck.order();        
-        while(deck.hasNext()){
-            card = deck.drawOne();
-            System.out.println(card.getSuit().getName() + " " + card.getRank().getName());
-        }
     }
 
 
