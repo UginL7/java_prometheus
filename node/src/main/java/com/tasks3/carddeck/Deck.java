@@ -122,11 +122,13 @@ public class Deck {
     //Карти виймаються з "вершини" колоди. Наприклад перший виклик видасть SPADES 6 потім
     //SPADES 7, ..., CLUBS 6, ..., CLUBS Ace і так далі до HEARTS Ace
     public Card drawOne() {
+        if(deckSize == 0) return null;
+        Card card = deck[deckSize-1];
         deckSize--;
-        return generateCard();
+        return card;
     }
 
-    private Card generateCard(){
+    private Card generateCard(){        
         Random rnd = new Random();
         Rank rank = Rank.values[rnd.nextInt(Rank.values.length)];
         Suit suit = Suit.values[rnd.nextInt(Suit.values.length)];
